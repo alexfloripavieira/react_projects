@@ -1,0 +1,11 @@
+{
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.semi": false,
+	"prettier.singleAttributePerLine": true,
+	"prettier.singleQuote": true,
+	"prettier.useTabs": true,
+	"prettier.vueIndentScriptAndStyle": true,
+	"prettier.withNodeModules": true
+}
