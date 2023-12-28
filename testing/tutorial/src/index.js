@@ -3,41 +3,43 @@ import ReactDOM from 'react-dom'
 
 
 import './index.css'
-const firstBook = {
-	img: 'https://images-na.ssl-images-amazon.com/images/I/81eB+7+CkUL._AC_UL200_SR200,200_.jpg',
-	title: 'I Love You to the Moon and Back',
-	author: 'Amelia Hepworth',
-}
-const secondBook = {
-	img: 'https://images-na.ssl-images-amazon.com/images/I/81nzxODnaJL._AC_UL200_SR200,200_.jpg',
-	title: 'Our Class is a Family',
-	author: 'Shannon Olsen',
-}
+
+const books = [
+	{
+		id: 1,
+		img: 'https://images-na.ssl-images-amazon.com/images/I/41P6+EzjzsL._AC_SX184_.jpg',
+		title: 'O Poder do Agora: Um guia para a iluminação espiritual',
+		author: 'Eckhart Tolle',
+	},
+	{
+		id: 2,
+		img: 'https://images-na.ssl-images-amazon.com/images/I/51Hg0c-RYsL._AC_SX184_.jpg',
+		title: 'Breves respostas para grandes questões',
+		author: 'Stephen Hawking',
+	},
+	{
+		id: 3,
+		img: 'https://images-na.ssl-images-amazon.com/images/I/41TsvI70n9L._AC_SX184_.jpg',
+		title: 'Do Mil ao Milhão. Sem Cortar o Cafezinho.',
+		author: 'Tiago Nigro',
+	},
+	{
+		id: 4,
+		img: 'https://images-na.ssl-images-amazon.com/images/I/51iCUqdSD3L._AC_SX184_.jpg',
+		title: 'O efeito he-man',
+		author: 'Box Brown',
+	},
+]
 
 function BookList() {
 	return (
-		<section className='booklist'>
-			<Book
-				title={firstBook.title}
-				author={firstBook.author}
-				img={firstBook.img}
-			>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-					quidem, quibusdam, quia, laboriosam quae voluptatum voluptate
-					aspernatur voluptatem quos voluptates quod? Quia, voluptatibus
-					aspernatur. Quisquam, voluptatum? Quasi, quidem. Quisquam, voluptatum
-					quasi.
-				</p>
-			</Book>
-			<Book
-				title={secondBook.title}
-				author={secondBook.author}
-				img={secondBook.img}
-			/>
-		</section>
+		<section className='booklist'>{books.map((book) => {
+			return <Book key={book.id} {...book}></Book>
+		})}</section>
 	)
 }
+
+
 
 const Book = (props) => {
 	const { img, title, author, children } = props
